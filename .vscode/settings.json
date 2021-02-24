@@ -54,5 +54,9 @@
         "Temp/":true,
         "**/*.csproj": true,
         "**/*.sln": true,
+    },
+    "editor.formatOnSave": true,
+    "[csharp]": {
+    "editor.defaultFormatter": "ms-dotnettools.csharp"
     }
 }

@@ -1,2 +1,2 @@
 # DOCUMENTAÇÃO
-Projeto exemplo para projetos unity 2D
+Exemplo para projetos unity 2D

@@ -15,6 +15,8 @@ public class player : MonoBehaviour
     public float speed;
     public float jumpForce;
     public bool lookLeft;
+
+    public Collider2D standingCollider, crounchingCollider;
     // start
 
     void Start()
@@ -75,6 +77,21 @@ public class player : MonoBehaviour
             _horizontal = 0;
         }
 
+        if (_vertical < 0 && grounded == true)
+        {
+            crounchingCollider.enabled = true;
+            standingCollider.enabled = false;
+        }
+        else if (_vertical >= 0 && grounded == true)
+        {
+            crounchingCollider.enabled = false;
+            standingCollider.enabled = true;
+        }
+        else if (_vertical != 0 && grounded == false)
+        {
+            crounchingCollider.enabled = false;
+            standingCollider.enabled = true;
+        }
         _playerAnimator.SetBool("grounded", grounded);
         _playerAnimator.SetInteger("idAnimation", idAnimation);
         _playerAnimator.SetFloat("speedY", _playerRb.velocity.y);
